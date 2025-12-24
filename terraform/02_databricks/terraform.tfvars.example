@@ -1,0 +1,4 @@
+resource_group_name           = "rg-databricks-analytics-dev"
+location                      = "eastus"
+workspace_name_prefix         = "dbw-databricks-analytics"
+public_network_access_enabled = true
