@@ -6,13 +6,19 @@ variable "resource_group_name" {
 variable "cluster_name" {
   type        = string
   description = "Name of the Databricks cluster"
-  default     = "Data Analytics Cluster"
+  default     = "Machine Learning Cluster"
 }
 
 variable "data_security_mode" {
   type        = string
   description = "Data security mode for the cluster"
   default     = "DATA_SECURITY_MODE_AUTO"
+}
+
+variable "single_user_name" {
+  type        = string
+  description = "User name for SINGLE_USER clusters (usually your Databricks login email)"
+  default     = null
 }
 
 variable "runtime_engine" {

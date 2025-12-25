@@ -12,5 +12,5 @@ variable "notebooks_dir" {
 variable "workspace_base_path" {
   type        = string
   description = "Destination folder in the Databricks workspace"
-  default     = "/Shared/data-analytics"
+  default     = "/Shared/machine-learning"
 }

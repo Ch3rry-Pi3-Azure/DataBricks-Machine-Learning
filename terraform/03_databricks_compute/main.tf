@@ -41,6 +41,7 @@ resource "databricks_cluster" "analytics" {
   node_type_id            = var.node_type_id
   autotermination_minutes = var.autotermination_minutes
   data_security_mode      = var.data_security_mode
+  single_user_name        = var.single_user_name
   runtime_engine          = var.runtime_engine
   kind                    = var.kind
   is_single_node          = var.is_single_node

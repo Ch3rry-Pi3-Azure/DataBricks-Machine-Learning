@@ -9,7 +9,7 @@ def run(cmd):
 
 if __name__ == "__main__":
     try:
-        parser = argparse.ArgumentParser(description="Destroy Terraform stacks.")
+        parser = argparse.ArgumentParser(description="Destroy Terraform stacks for the machine learning pipeline.")
         group = parser.add_mutually_exclusive_group()
         group.add_argument("--rg-only", action="store_true", help="Destroy only the resource group stack")
         group.add_argument("--databricks-only", action="store_true", help="Destroy only the Databricks stack")

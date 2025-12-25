@@ -43,46 +43,46 @@ provider "databricks" {
 }
 
 resource "databricks_job" "notebook_pipeline" {
-  name = "data-analytics-notebook-pipeline"
+  name = "machine-learning-notebook-pipeline"
 
   task {
-    task_key        = "01_data_ingest"
+    task_key        = "01_training_model"
     existing_cluster_id = data.terraform_remote_state.compute.outputs.cluster_id
     notebook_task {
-      notebook_path = "/Shared/data-analytics/01_data_ingest.ipynb"
+      notebook_path = "/Shared/machine-learning/01_training_model.ipynb"
     }
   }
 
   task {
-    task_key        = "02_dataframe_schema"
+    task_key        = "02_mlflow"
     existing_cluster_id = data.terraform_remote_state.compute.outputs.cluster_id
     depends_on {
-      task_key = "01_data_ingest"
+      task_key = "01_training_model"
     }
     notebook_task {
-      notebook_path = "/Shared/data-analytics/02_dataframe_schema.ipynb"
+      notebook_path = "/Shared/machine-learning/02_mlflow.ipynb"
     }
   }
 
   task {
-    task_key        = "03_sql_analysis"
+    task_key        = "03_hyperopt"
     existing_cluster_id = data.terraform_remote_state.compute.outputs.cluster_id
     depends_on {
-      task_key = "02_dataframe_schema"
+      task_key = "02_mlflow"
     }
     notebook_task {
-      notebook_path = "/Shared/data-analytics/03_sql_analysis.ipynb"
+      notebook_path = "/Shared/machine-learning/03_hyperopt.ipynb"
     }
   }
 
   task {
-    task_key        = "04_visualization"
+    task_key        = "04_deep_learning"
     existing_cluster_id = data.terraform_remote_state.compute.outputs.cluster_id
     depends_on {
-      task_key = "03_sql_analysis"
+      task_key = "03_hyperopt"
     }
     notebook_task {
-      notebook_path = "/Shared/data-analytics/04_visualization.ipynb"
+      notebook_path = "/Shared/machine-learning/04_deep_learning.ipynb"
     }
   }
 }

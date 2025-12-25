@@ -37,10 +37,10 @@ provider "databricks" {
 
 locals {
   notebooks = {
-    "01_data_ingest"      = "${var.notebooks_dir}/01_data_ingest.ipynb"
-    "02_dataframe_schema" = "${var.notebooks_dir}/02_dataframe_schema.ipynb"
-    "03_sql_analysis"     = "${var.notebooks_dir}/03_sql_analysis.ipynb"
-    "04_visualization"    = "${var.notebooks_dir}/04_visualization.ipynb"
+    "01_training_model" = "${var.notebooks_dir}/01_TrainingModel.ipynb"
+    "02_mlflow"         = "${var.notebooks_dir}/02_MLflow.ipynb"
+    "03_hyperopt"       = "${var.notebooks_dir}/03_Hyperopt.ipynb"
+    "04_deep_learning"  = "${var.notebooks_dir}/04_DeepLearning.ipynb"
   }
 }
 
