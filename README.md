@@ -1,11 +1,11 @@
-# Databricks Data Analytics (Azure)
+# Databricks Machine Learning (Azure)
 
-Terraform-driven Databricks analytics project on Microsoft Azure. This repo provisions:
+Terraform-driven Databricks machine learning project on Microsoft Azure. This repo provisions:
 - Azure resource group
 - Azure Databricks workspace
 - Databricks compute cluster
-- Notebook uploads to `/Shared/data-analytics`
-- A Databricks job pipeline that runs the notebooks in order
+- Notebook uploads to `/Shared/machine-learning`
+- A Databricks job pipeline that runs the ML notebooks in order
 
 ## Quick Start
 1) Install prerequisites:
@@ -66,11 +66,11 @@ python scripts\destroy.py
 
 ## Run the Pipeline
 After deploying the jobs stack:
-- Databricks UI → Jobs & Pipelines → `data-analytics-notebook-pipeline` → Run now
+- Databricks UI → Jobs & Pipelines → `machine-learning-notebook-pipeline` → Run now
 
 ## Tips
 - Databricks provider requires 64-bit Terraform on Windows.
-- Re-deploying notebooks overwrites the workspace copies under `/Shared/data-analytics`.
+- Re-deploying notebooks overwrites the workspace copies under `/Shared/machine-learning`.
 
 ## Guide
 See `guides/setup.md` for detailed instructions.

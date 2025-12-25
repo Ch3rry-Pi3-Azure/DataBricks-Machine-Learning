@@ -52,4 +52,16 @@ resource "databricks_cluster" "analytics" {
     "spark.databricks.cluster.profile" = "singleNode"
     "spark.master"                     = "local[*]"
   }
+
+  library {
+    pypi {
+      package = "hyperopt"
+    }
+  }
+
+  library {
+    pypi {
+      package = "torch"
+    }
+  }
 }

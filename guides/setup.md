@@ -49,16 +49,16 @@ az account show
 Edit `terraform/01_resource_group/terraform.tfvars` to set the resource group name and location:
 
 ```hcl
-resource_group_name = "rg-databricks-analytics-dev"
+resource_group_name = "rg-databricks-ml-dev"
 location            = "eastus"
 ```
 
 Edit `terraform/02_databricks/terraform.tfvars` to set Databricks inputs:
 
 ```hcl
-resource_group_name           = "rg-databricks-analytics-dev"
+resource_group_name           = "rg-databricks-ml-dev"
 location                      = "eastus"
-workspace_name_prefix         = "dbw-databricks-analytics"
+workspace_name_prefix         = "dbw-databricks-ml"
 public_network_access_enabled = true
 ```
 
@@ -67,19 +67,19 @@ If `workspace_name` is not provided, a random animal name is appended to the pre
 Edit `terraform/03_databricks_compute/terraform.tfvars` to set compute inputs:
 
 ```hcl
-resource_group_name = "rg-databricks-analytics-dev"
+resource_group_name = "rg-databricks-ml-dev"
 ```
 
 Edit `terraform/04_notebooks/terraform.tfvars` to set notebook inputs:
 
 ```hcl
-resource_group_name = "rg-databricks-analytics-dev"
+resource_group_name = "rg-databricks-ml-dev"
 ```
 
 Edit `terraform/05_jobs/terraform.tfvars` to set job inputs:
 
 ```hcl
-resource_group_name = "rg-databricks-analytics-dev"
+resource_group_name = "rg-databricks-ml-dev"
 ```
 
 ## Unity Catalog Notes
@@ -125,9 +125,9 @@ python scripts\destroy.py --jobs-only
 
 ## Running the Job
 After deploying the jobs stack, run the pipeline from the Databricks UI:
-- Workspace → Jobs & Pipelines → `data-analytics-notebook-pipeline` → Run now
+- Workspace → Jobs & Pipelines → `machine-learning-notebook-pipeline` → Run now
 
 ## Notes
 - Resource group names must be unique within your Azure subscription.
-- Follow a consistent naming convention (e.g., `rg-databricks-analytics-dev-eastus`).
+- Follow a consistent naming convention (e.g., `rg-databricks-ml-dev-eastus`).
 - Azure Databricks creates a separate managed resource group in the same subscription.
