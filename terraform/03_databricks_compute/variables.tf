@@ -36,7 +36,7 @@ variable "kind" {
 variable "spark_version" {
   type        = string
   description = "Databricks runtime version"
-  default     = "16.4.x-scala2.13"
+  default     = "16.0.x-scala2.12"
 }
 
 variable "node_type_id" {
@@ -54,5 +54,11 @@ variable "autotermination_minutes" {
 variable "is_single_node" {
   type        = bool
   description = "Whether to create a single-node cluster"
+  default     = true
+}
+
+variable "use_ml_runtime" {
+  type        = bool
+  description = "Use Databricks ML runtime image"
   default     = true
 }

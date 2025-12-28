@@ -45,6 +45,7 @@ resource "databricks_cluster" "analytics" {
   runtime_engine          = var.runtime_engine
   kind                    = var.kind
   is_single_node          = var.is_single_node
+  use_ml_runtime          = var.use_ml_runtime
 
   num_workers = 0
 
@@ -55,7 +56,7 @@ resource "databricks_cluster" "analytics" {
 
   library {
     pypi {
-      package = "hyperopt"
+      package = "hyperopt>=0.2.7"
     }
   }
 
