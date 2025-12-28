@@ -64,6 +64,11 @@ python scripts\destroy.py
 - The catalog must already exist (create it in the Databricks UI if required).
 - The notebooks create the schema and volume if missing, then use `BASE = dbfs:/Volumes/<CATALOG>/<SCHEMA>/<VOLUME>` for all paths.
 
+## Model Registry Notes
+- MLflow model registration uses Unity Catalog and requires model signatures.
+- Notebook 2 registers `diabetes_lr`, notebook 3 registers `diabetes_tree_tuned`, and notebook 4 registers `diabetes_pytorch`.
+- Models appear under the Models tab as `<CATALOG>.<SCHEMA>.<model_name>`.
+
 ## Run the Pipeline
 After deploying the jobs stack:
 - Databricks UI → Jobs & Pipelines → `machine-learning-notebook-pipeline` → Run now

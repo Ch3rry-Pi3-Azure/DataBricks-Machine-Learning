@@ -87,6 +87,10 @@ resource_group_name = "rg-databricks-ml-dev"
 - The catalog must already exist in your metastore; if it does not, create it in the Databricks UI (or provide a managed location).
 - The notebooks create the schema and volume if missing, then use `BASE = dbfs:/Volumes/<CATALOG>/<SCHEMA>/<VOLUME>` for all paths.
 
+## Model Registry Notes
+- Unity Catalog requires MLflow model signatures for registration.
+- The notebooks register models under `<CATALOG>.<SCHEMA>` so they appear in the Models tab.
+
 ## Deploy Resources
 From the repo root or `scripts/` folder, run:
 
